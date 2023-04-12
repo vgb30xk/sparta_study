@@ -1,0 +1,56 @@
+<div id="profile_Page">
+  <section id="profile_Wrapper">
+    <div id="profile_topbar">
+      <p id="profile_home">
+        <span style="cursor: pointer" onclick="goToMain()">홈</span>
+      </p>
+      <!-- 홈버튼 -->
+      <input onkeyup="fil()" id="profile_search" type="text" placeholder="검색" />
+      <!-- 검색창 -->
+    </div>
+    <form id="profile_Form" onsubmit="changeProfile(event)">
+      <span id="profile_back" onclick="goToMain()"></span>
+      <!-- 뒤로가기 -->
+      <div id="profile_imagebar">
+        <div id="profile_imgLabel">
+          <img id="profile_Image" src="../assets/blankProfile.webp" alt="파일 아이콘" />
+          <!-- 프로필 이미지 -->
+        </div>
+        <label id="profile_imgLabel_edit" for="profile_imgInput_edit">프로필 파일 수정 <input onchange="onFileChange(event)" id="profile_imgInput_edit" type="file" accept="images/*" /></label>
+      </div>
+      <!-- 프로필 사진 수정 -->
+
+      <div id="profile_contents">
+        <input id="profile_nickName" type="text" placeholder="닉네임" value="" />
+        <!-- 닉네임 -->
+        <input id="profile_babyName" type="text" placeholder="반려동물 이름" value="" />
+        <!-- 반려동물 이름 -->
+        <textarea id="profile_description" placeholder="설명" value=""></textarea>
+        <!-- 설명 -->
+      </div>
+    </form>
+    <div id="profile_mypost">my post(<span id="profilepost_total"></span>)</div>
+    <!-- my post문구 -->
+    <div id="profile_post_box">
+      <div class="profile_post_side">
+        <div class="profile_post">나의 펫 한번 보여드릴게요~</div>
+      </div>
+      <div class="profile_post_side">
+        <div class="profile_post">이쁜 우리 강아지 입니다요</div>
+      </div>
+      <div class="profile_post_side">
+        <div class="profile_post">첫 나의 반려동물 ㅎㅎ</div>
+      </div>
+      <div class="profile_post_side">
+        <div class="profile_post">우리 강아지 어떤가요ㅎ</div>
+      </div>
+      <!-- 포스트에 있는 글 불러오기 -->
+    </div>
+    <div id="profile_bottombar">
+      <button id="profile_edit" onclick="changeProfile(this);">수정</button>
+      <!-- 수정 -->
+      <input id="profile_cancel" type="button" value="취소" onclick="goToProfile();" />
+      <!-- 취소 -->
+    </div>
+  </section>
+</div>

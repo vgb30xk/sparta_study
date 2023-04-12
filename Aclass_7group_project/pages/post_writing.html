@@ -1,0 +1,25 @@
+<div class="write-parent-container">
+  <div class="write-container">
+    <div class="writeUpload-box">
+      <div id="drop-file" class="drag-file">
+        <img id="previewImg" src="/assets/preview_img_background.jpg" alt="미리보기 이미지" class="preview" />
+      </div>
+      <div class="fileUploadBtn">
+        <label class="file-label" for="chooseFile">Choose File</label>
+        <input class="file" id="chooseFile" type="file" accept="image/png, image/jpeg" onchange="upload_postImage(event)" />
+      </div>
+    </div>
+    <div class="write-box">
+      <div class="writeBox-group">
+        <label for="write_title">제목</label>
+        <input id="write_title" type="text" maxlength="15" placeholder="제목을 작성해주세요" />
+        <label for="write_posting">내용</label>
+        <textarea id="write_posting" placeholder="내용을 작성해주세요"></textarea>
+      </div>
+    </div>
+  </div>
+  <div class="yesOrNobtns">
+    <button id="btn_no" type="button" onclick="goToMain()">CANCEL</button>
+    <button id="btn_yes" type="submit" onclick="save_posting(event)">SAVE</button>
+  </div>
+</div>

@@ -1,0 +1,177 @@
+/* * {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("../assets/writing_body_backgroundImg.png");
+} */
+
+.write-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
+}
+
+.writeUpload-box {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1rem;
+  margin-top: 20px;
+  align-items: center;
+  border-radius: 50px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  background-color: white;
+  box-shadow: 10px 12px 10px rgba(0, 0, 0, 0.25);
+}
+
+.writeUpload-box .drag-file {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  border: 3px dashed #dbdbdb;
+  border-radius: 50px;
+}
+
+.writeUpload-box .drag-file.highlight {
+  border: 3px dashed red;
+}
+
+.writeUpload-box .drag-file .image {
+  width: 40px;
+}
+
+.writeUpload-box .drag-file .message {
+  margin-bottom: 0;
+}
+
+.writeUpload-box .drag-file .preview {
+  position: absolute;
+  left: 0;
+  height: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+}
+
+.write-box {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  height: 580px;
+  margin-top: 20px;
+  padding: 1rem;
+  border-radius: 50px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  background-color: white;
+  box-shadow: 10px 12px 10px rgba(0, 0, 0, 0.25);
+}
+
+.writeBox-group {
+  width: 100%;
+  margin-bottom: 1.25rem;
+}
+
+.writeBox-group label {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 0;
+  margin-top: 10px;
+  border-radius: 5px;
+  background-color: white;
+  color: white;
+  padding: 3px;
+}
+
+.writeBox-group input {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  padding: 10px;
+}
+
+.writeBox-group textarea {
+  height: 400px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  padding: 10px;
+  padding-top: 20px;
+  line-height: 150%;
+}
+
+.yesOrNobtns {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px;
+  box-sizing: border-box;
+}
+
+#btn_no,
+#btn_yes {
+  border: none;
+  outline: transparent;
+  background-color: rgb(138, 82, 58);
+  border-radius: 100px;
+  padding: 20px;
+  color: white;
+  margin-top: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  min-height: 30px;
+  min-width: 120px;
+  box-shadow: 1px 4px 0 rgb(0, 0, 0, 0.5);
+}
+
+#btn_no:active,
+#btn_yes:active {
+  box-shadow: 1px 1px 0 rgb(0, 0, 0, 0.5);
+  position: relative;
+  top: 2px;
+  transition: 0.5s;
+}
+
+.fileUploadBtn {
+  width: 100%;
+  text-align: center;
+  align-items: center;
+}
+.file-label {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-top: 30px;
+  background-color: rgb(138, 82, 58);
+  color: #fff;
+  padding: 10px;
+  width: 100%;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 1px 4px 0 rgb(0, 0, 0, 0.5);
+}
+.file-label:active {
+  box-shadow: 1px 1px 0 rgb(0, 0, 0, 0.5);
+  position: relative;
+  top: 2px;
+}
+
+.file {
+  display: none;
+}
+
+#previewImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

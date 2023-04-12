@@ -1,0 +1,83 @@
+<div class="post-container">
+  <div class="post-wrapper">
+    <div id="post-img"></div>
+    <div class="post-desc-wrapper">
+      <div class="post-header">
+        <div class="post-user">
+          <img id="post-user-img" src="../assets/blankProfile.webp" />
+          <div id="post-nickname">닉네임</div>
+          <div id="post-date">2022-10-31</div>
+        </div>
+        <!-- <div id="post-btns"> -->
+        <!-- <img class="comment-btn" onclick="updatePoster();" src="../assets/edit.png" width="36" height="36" />
+          <img class="comment-btn" onclick="deletePoster();" src="../assets/delete.png" width="36" height="36" /> -->
+        <!-- </div> -->
+      </div>
+      <div id="post-animal-name">반려동물 이름</div>
+      <div id="post-title">title</div>
+      <div id="post-desc">content</div>
+    </div>
+  </div>
+  <div class="comment-container">
+    <div class="comment-label">코멘트(<span id="comment-total"></span>)</div>
+    <div id="comment-list">
+      <!-- <div class="comment-wrapper">
+        <img class="comment-profile" src="../assets/blankProfile.webp" />
+        <div class="comment-items">
+          <div class="comment-header">
+            <div class="comment-info">
+              <div class="comment-nickname">닉네임</div>
+              <div class="comment-date">2022-10-31</div>
+            </div>
+            <div class="comment-btns">
+              <div class="comment-edit-complete">수정완료</div>
+              <div class="comment-edit-cancel" onclick="cancelEditComment(this);">취소</div>
+            </div>
+          </div>
+          <div class="comment-contents">
+            <input class="comment-contents-edit" placeholder="댓글을 입력하세요." />
+          </div>
+        </div>
+      </div>
+      <div class="comment-wrapper">
+        <img class="comment-profile" src="../assets/blankProfile.webp" />
+        <div class="comment-items">
+          <div class="comment-header">
+            <div class="comment-info">
+              <div class="comment-nickname">닉네임</div>
+              <div class="comment-date">2022-10-31</div>
+            </div>
+            <div class="comment-btns">
+              <img class="comment-btn" onclick="editComment(this);" src="../assets/edit.png" width="36" height="36" />
+              <img class="comment-btn" onclick="deleteComment(this);" src="../assets/delete.png" width="36" height="36" />
+            </div>
+          </div>
+          <div class="comment-contents">
+            내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
+          </div>
+        </div>
+      </div>
+      <div class="comment-wrapper">
+        <img class="comment-profile" src="../assets/blankProfile.webp" />
+        <div class="comment-items">
+          <div class="comment-header">
+            <div class="comment-info">
+              <div class="comment-nickname">닉네임</div>
+              <div class="comment-date">2022-10-31</div>
+            </div>
+            <div class="comment-btns">
+              <img class="comment-btn" onclick="editComment(this);" src="../assets/edit.png" width="36" height="36" />
+              <img class="comment-btn" onclick="deleteComment(this);" src="../assets/delete.png" width="36" height="36" />
+            </div>
+          </div>
+          <div class="comment-contents">내용3</div>
+        </div>
+      </div> -->
+    </div>
+    <div class="comment-post-wrapper">
+      <img id="comment-user-img" src="../assets/blankProfile.webp" />
+      <input id="comment-input" onkeyup="onEnterKey();" placeholder="Add a comment..." />
+      <img class="comment-create-btn" onclick="createComments();" src="../assets/send.png" width="36" height="36" />
+    </div>
+  </div>
+</div>
