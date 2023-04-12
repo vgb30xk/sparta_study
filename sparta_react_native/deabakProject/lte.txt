@@ -1,0 +1,154 @@
+<dropdown install>
+npm install react-native-dropdown-select-list
+
+    <select list 붙은거 삭제바람>
+    <SelectList
+          setSelected={val => setAddPostCategory(val)}
+          data={data}
+          save="value"
+          placeholder="Select category"
+          value={addPostCategory}
+          maxHeight={200}
+        />
+
+12345678
+
+
+  const a = () => {
+    setCategory('기술');
+    navigate('Stacks', {
+      screen: 'PostList',
+      params: { category: category },
+    });
+  };
+  useEffect(() => {
+    console.log(category);
+  }, [category]);
+
+
+  /////////////////// 오늘 알게된것 /////////////////////
+  비동기함수는 동기함수가 다 실행되고 나서 실행되는 것
+
+  //////////////////////////////////////// main 백업
+
+import React from "react";
+import { TouchableOpacity, Text, Alert } from "react-native";
+import styled from "@emotion/native";
+import { useMutation } from "react-query";
+import { deletePost } from "../api";
+
+const PostCards = ({ post }) => {
+  const { isLoading: isLoadingDeleting, mutate: removePost } = useMutation(
+    ["deletePost", post.id],
+    (body) => deletePost(body),
+    {
+      onSuccess: () => {
+        console.log("삭제성공");
+      },
+      onError: (err) => {
+        console.log("err in delete:", err);
+      },
+    }
+  );
+
+  const onDeletePost = async (id) => {
+    Alert.alert("게시글 삭제", "정말 현재 게시글을 삭제하시겠습니까?", [
+      { text: "cancel", style: "destructive" },
+      {
+        text: "OK. Delete it.",
+        onPress: async () => {
+          try {
+            // await deleteDoc(doc(dbService, "reviews", review.id));
+            await removePost(id);
+            alert("삭제가 완료되었습니다.");
+          } catch (err) {
+            console.log("err:", err);
+          }
+        },
+      },
+    ]);
+  };
+
+  if (isLoadingDeleting) {
+    return <Text>조금만 기다려주세요!</Text>;
+  }
+
+  return (
+    <>
+      <UserPostsView key={post.id}>
+        <Text>{post.title}</Text>
+        <Text>{post.contents}</Text>
+        <Text>{new Date(post.createdAt).toLocaleDateString("kr")}</Text>
+        <TouchableOpacity onPress={() => onDeletePost(post.id)}>
+          <Text>삭제</Text>
+        </TouchableOpacity>
+      </UserPostsView>
+    </>
+  );
+};
+
+export default PostCards;
+
+const UserPostsView = styled.View`
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-width: 1px;
+  background-color: green;
+
+  height: 130px;
+  width: 230px;
+`;
+export const TitleInput = styled.TextInput`
+  width: 100%;
+  background-color: white;
+  border-color: #e8e8e8;
+  border-width: 1px;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 15px;
+  padding: 20px;
+`;
+
+// export const ContentInput = styled.TextInput`
+//   border: 1px solid black;
+//   height: 150px;
+//   border-radius: 10px;
+//   margin-bottom: 10px;
+// `;
+
+export const ContentInput = styled.TextInput`
+  width: 100%;
+  background-color: white;
+  border-color: red;
+  border-width: 1px;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 15px;
+  padding: 20px;
+  height: 150px;
+`;
+
+// export const UrlInput = styled.TextInput`
+//   border: 1px solid black;
+//   height: 45px;
+//   border-radius: 10px;
+// `;
+export const UrlInput = styled.TextInput`
+  width: 100%;
+  background-color: white;
+  border-color: black;
+  border-width: 1px;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 15px;
+  padding: 20px;
+`;
+
+export const SelectBox = styled.View``;
+
+export const InputBox = styled.View``;

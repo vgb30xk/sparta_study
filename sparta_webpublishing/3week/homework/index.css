@@ -1,0 +1,13 @@
+.sc_my {
+  color-scheme: light;
+  font-size: 12px;
+  line-height: 16px;
+  color: #202020;
+  font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕",
+    helvetica, "Apple SD Gothic Neo", sans-serif;
+  letter-spacing: -0.2px;
+  user-select: text !important;
+  width: 390px;
+  margin-left: -20px;
+  height: 135px;
+}

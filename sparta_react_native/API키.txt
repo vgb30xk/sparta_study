@@ -1,0 +1,14 @@
+API 키 (v3 auth)
+b60ca9b20f71bcb55426d04e10ed9e92
+
+backdrop_path
+id
+overview
+poster_path
+title
+vote_average
+
+poster_path
+title
+release_date
+overview

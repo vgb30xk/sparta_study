@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="search.css" />
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <!-- 숙제 - 네이버 최근검색어 내역을 직접 만들어보기 -->
+    <div id="search" class="search_area">
+      <form
+        id="sform"
+        name="sform"
+        action="https://search.naver.com/search.naver"
+        method="get"
+        role="search"
+      >
+        <fieldset>
+          <legend class="blind">검색</legend>
+          <div class="green_window">
+            <input
+              id="query"
+              name="query"
+              type="text"
+              maxlength="255"
+              class="input_text"
+              tabindex="1"
+              autocomplete="off"
+              placeholder="검색어를 입력해 주세요."
+            />
+          </div>
+          <button
+            id="search_btn"
+            type="submit"
+            title="검색"
+            tabindex="3"
+            class="btn_submit"
+          >
+            <span class="blind">검색</span>
+            <span class="ico_search_submit"></span>
+          </button>
+        </fieldset>
+      </form>
+
+      <div class="autocomplete">
+        <a
+          href="#"
+          role="button"
+          id="nautocomplete"
+          tabindex="2"
+          class="btn_arw _btn_arw fold"
+          aria-pressed="true"
+          data-atcmp-element=""
+        >
+          <div id="autoFrame" class="reatcmp">
+            <!-- [AU] data-atcmp-element attribute를 추가해주세요. -->
+            <div class="ly_atcmp" data-atcmp-element="">
+              <div class="api_atcmp_wrap">
+                <!-- 최근검색어 -->
+                <!-- [AU] _recent_layer 클래스를 추가해주세요. -->
+                <div class="atcmp_fixer _recent_layer" style="display: block">
+                  <!-- [AU] _recent_header 클래스를 추가해주세요. -->
+                  <div class="atcmp_header _recent_header">
+                    <span class="tit">최근검색어</span>
+                    <div class="option">
+                      <!-- [AU] _delAll 클래스를 추가해주세요. -->
+                      <a
+                        role="button"
+                        href="#"
+                        class="item _delAll"
+                        aria-pressed="false"
+                        >전체삭제</a
+                      >
+                    </div>
+                  </div>
+                  <div class="atcmp_container">
+                    <!-- [AU] _recent 클래스를 추가해주세요. -->
+                    <ul class="kwd_lst _recent">
+                      <!-- 최근검색어 템플릿 -->
+                      <!-- [AU] _item 클래스를 추가해주세요. -->
+                      <!-- [AU] data-template-type="history" data-keyword="검은사막" attribute를 추가해주세요. -->
+                      <li
+                        class="item _item"
+                        data-rank="1"
+                        data-template-type="history"
+                        data-keyword="검은사막"
+                      >
+                        <a href="#" class="kwd">
+                          <span class="fix"
+                            ><span class="common_ico_kwd"
+                              ><i class="imsc ico_search"></i></span
+                            ><span>검은사막</span></span
+                          >
+                        </a>
+                        <span class="etc">
+                          <em class="date">11.14.</em>
+                          <!-- [AU] _del 클래스를 추가해주세요. -->
+                          <a
+                            href="#"
+                            role="button"
+                            class="bt_item _del"
+                            aria-pressed="false"
+                            ><i class="imsc ico_del">삭제</i></a
+                          >
+                        </span>
+                      </li>
+                      <!-- 최근검색어 템플릿 -->
+                      <!-- [AU] _item 클래스를 추가해주세요. -->
+                      <!-- [AU] data-template-type="history" data-keyword="녹스 휴대폰모델" attribute를 추가해주세요. -->
+                      <li
+                        class="item _item"
+                        data-rank="2"
+                        data-template-type="history"
+                        data-keyword="녹스 휴대폰모델"
+                      >
+                        <a href="#" class="kwd">
+                          <span class="fix"
+                            ><span class="common_ico_kwd"
+                              ><i class="imsc ico_search"></i></span
+                            ><span>녹스 휴대폰모델</span></span
+                          >
+                        </a>
+                        <span class="etc">
+                          <em class="date">05.30.</em>
+                          <!-- [AU] _del 클래스를 추가해주세요. -->
+                          <a
+                            href="#"
+                            role="button"
+                            class="bt_item _del"
+                            aria-pressed="false"
+                            ><i class="imsc ico_del">삭제</i></a
+                          >
+                        </span>
+                      </li>
+                      <!-- 최근검색어 템플릿 -->
+                      <!-- [AU] _item 클래스를 추가해주세요. -->
+                      <!-- [AU] data-template-type="history" data-keyword="녹스 카페" attribute를 추가해주세요. -->
+                      <li
+                        class="item _item"
+                        data-rank="3"
+                        data-template-type="history"
+                        data-keyword="녹스 카페"
+                      >
+                        <a href="#" class="kwd">
+                          <span class="fix"
+                            ><span class="common_ico_kwd"
+                              ><i class="imsc ico_search"></i></span
+                            ><span>녹스 카페</span></span
+                          >
+                        </a>
+                        <span class="etc">
+                          <em class="date">05.30.</em>
+                          <!-- [AU] _del 클래스를 추가해주세요. -->
+                          <a
+                            href="#"
+                            role="button"
+                            class="bt_item _del"
+                            aria-pressed="false"
+                            ><i class="imsc ico_del">삭제</i></a
+                          >
+                        </span>
+                      </li>
+                      <!-- 최근검색어 템플릿 -->
+                      <!-- [AU] _item 클래스를 추가해주세요. -->
+                      <!-- [AU] data-template-type="history" data-keyword="녹스" attribute를 추가해주세요. -->
+                      <li
+                        class="item _item"
+                        data-rank="4"
+                        data-template-type="history"
+                        data-keyword="녹스"
+                      >
+                        <a href="#" class="kwd">
+                          <span class="fix"
+                            ><span class="common_ico_kwd"
+                              ><i class="imsc ico_search"></i></span
+                            ><span>녹스</span></span
+                          >
+                        </a>
+                        <span class="etc">
+                          <em class="date">05.30.</em>
+                          <!-- [AU] _del 클래스를 추가해주세요. -->
+                          <a
+                            href="#"
+                            role="button"
+                            class="bt_item _del"
+                            aria-pressed="false"
+                            ><i class="imsc ico_del">삭제</i></a
+                          >
+                        </span>
+                      </li>
+                      <!-- 최근검색어 템플릿 -->
+                      <!-- [AU] _item 클래스를 추가해주세요. -->
+                      <!-- [AU] data-template-type="history" data-keyword="온라인게임 순위" attribute를 추가해주세요. -->
+                      <li
+                        class="item _item"
+                        data-rank="5"
+                        data-template-type="history"
+                        data-keyword="온라인게임 순위"
+                      >
+                        <a href="#" class="kwd">
+                          <span class="fix"
+                            ><span class="common_ico_kwd"
+                              ><i class="imsc ico_search"></i></span
+                            ><span>온라인게임 순위</span></span
+                          >
+                        </a>
+                        <span class="etc">
+                          <em class="date">04.16.</em>
+                          <!-- [AU] _del 클래스를 추가해주세요. -->
+                          <a
+                            href="#"
+                            role="button"
+                            class="bt_item _del"
+                            aria-pressed="false"
+                            ><i class="imsc ico_del">삭제</i></a
+                          >
+                        </span>
+                      </li>
+                      <!-- 최근검색어 템플릿 -->
+                      <!-- [AU] _item 클래스를 추가해주세요. -->
+                      <!-- [AU] data-template-type="history" data-keyword="이리스 유마" attribute를 추가해주세요. -->
+                      <li
+                        class="item _item over"
+                        data-rank="6"
+                        data-template-type="history"
+                        data-keyword="이리스 유마"
+                      >
+                        <a href="#" class="kwd">
+                          <span class="fix"
+                            ><span class="common_ico_kwd"
+                              ><i class="imsc ico_search"></i></span
+                            ><span>이리스 유마</span></span
+                          >
+                        </a>
+                        <span class="etc">
+                          <em class="date">04.10.</em>
+                          <!-- [AU] _del 클래스를 추가해주세요. -->
+                          <a
+                            href="#"
+                            role="button"
+                            class="bt_item _del"
+                            aria-pressed="false"
+                            ><i class="imsc ico_del">삭제</i></a
+                          >
+                        </span>
+                      </li>
+                      <!-- 최근검색어 템플릿 -->
+                      <!-- [AU] _item 클래스를 추가해주세요. -->
+                      <!-- [AU] data-template-type="history" data-keyword="소울워커" attribute를 추가해주세요. -->
+                      <li
+                        class="item _item"
+                        data-rank="7"
+                        data-template-type="history"
+                        data-keyword="소울워커"
+                      >
+                        <a href="#" class="kwd">
+                          <span class="fix"
+                            ><span class="common_ico_kwd"
+                              ><i class="imsc ico_search"></i></span
+                            ><span>소울워커</span></span
+                          >
+                        </a>
+                        <span class="etc">
+                          <em class="date">04.10.</em>
+                          <!-- [AU] _del 클래스를 추가해주세요. -->
+                          <a
+                            href="#"
+                            role="button"
+                            class="bt_item _del"
+                            aria-pressed="false"
+                            ><i class="imsc ico_del">삭제</i></a
+                          >
+                        </span>
+                      </li>
+                      <!-- 최근검색어 템플릿 -->
+                      <!-- [AU] _item 클래스를 추가해주세요. -->
+                      <!-- [AU] data-template-type="history" data-keyword="모바일 게임 순위" attribute를 추가해주세요. -->
+                      <li
+                        class="item _item"
+                        data-rank="8"
+                        data-template-type="history"
+                        data-keyword="모바일 게임 순위"
+                      >
+                        <a href="#" class="kwd">
+                          <span class="fix"
+                            ><span class="common_ico_kwd"
+                              ><i class="imsc ico_search"></i></span
+                            ><span>모바일 게임 순위</span></span
+                          >
+                        </a>
+                        <span class="etc">
+                          <em class="date">01.19.</em>
+                          <!-- [AU] _del 클래스를 추가해주세요. -->
+                          <a
+                            href="#"
+                            role="button"
+                            class="bt_item _del"
+                            aria-pressed="false"
+                            ><i class="imsc ico_del">삭제</i></a
+                          >
+                        </span>
+                      </li>
+                      <!-- 최근검색어 템플릿 -->
+                      <!-- [AU] _item 클래스를 추가해주세요. -->
+                      <!-- [AU] data-template-type="history" data-keyword="1월 순위" attribute를 추가해주세요. -->
+                      <li
+                        class="item _item"
+                        data-rank="9"
+                        data-template-type="history"
+                        data-keyword="1월 순위"
+                      >
+                        <a href="#" class="kwd">
+                          <span class="fix"
+                            ><span class="common_ico_kwd"
+                              ><i class="imsc ico_search"></i></span
+                            ><span>1월 순위</span></span
+                          >
+                        </a>
+                        <span class="etc">
+                          <em class="date">01.19.</em>
+                          <!-- [AU] _del 클래스를 추가해주세요. -->
+                          <a
+                            href="#"
+                            role="button"
+                            class="bt_item _del"
+                            aria-pressed="false"
+                            ><i class="imsc ico_del">삭제</i></a
+                          >
+                        </span>
+                      </li>
+                      <!-- 최근검색어 템플릿 -->
+                      <!-- [AU] _item 클래스를 추가해주세요. -->
+                      <!-- [AU] data-template-type="history" data-keyword="텐핑" attribute를 추가해주세요. -->
+                      <li
+                        class="item _item"
+                        data-rank="10"
+                        data-template-type="history"
+                        data-keyword="텐핑"
+                      >
+                        <a href="#" class="kwd">
+                          <span class="fix"
+                            ><span class="common_ico_kwd"
+                              ><i class="imsc ico_search"></i></span
+                            ><span>텐핑</span></span
+                          >
+                        </a>
+                        <span class="etc">
+                          <em class="date">01.19.</em>
+                          <!-- [AU] _del 클래스를 추가해주세요. -->
+                          <a
+                            href="#"
+                            role="button"
+                            class="bt_item _del"
+                            aria-pressed="false"
+                            ><i class="imsc ico_del">삭제</i></a
+                          >
+                        </span>
+                      </li>
+                    </ul>
+                    <!-- [D] 검색어 저장 꺼진 경우 atcmp_fixer에 type_off 추가 -->
+                    <!-- [AU] _offMsg 클래스를 추가해주세요. -->
+                    <div class="kwd_info kwd_off _offMsg" style="display: none">
+                      검색어 저장 기능이 꺼져 있습니다.<br /><span
+                        class="kwd_dsc"
+                        >설정이 초기화 된다면
+                        <a
+                          href="https://help.naver.com/support/alias/search/word/word_29.naver"
+                          class="kwd_help"
+                          data-clk="sly.help"
+                          target="_blank"
+                          >도움말</a
+                        >을 확인해주세요.</span
+                      >
+                    </div>
+                    <!-- [D] 검색어 내역 없는 경우 atcmp_fixer에 type_off 추가 -->
+                    <!-- [AU] _recentNone 클래스를 추가해주세요. -->
+                    <div
+                      class="kwd_info kwd_none _recentNone"
+                      style="display: none"
+                    >
+                      최근 검색어 내역이 없습니다.<br /><span class="kwd_dsc"
+                        >설정이 초기화 된다면
+                        <a
+                          href="https://help.naver.com/support/alias/search/word/word_29.naver"
+                          class="kwd_help"
+                          data-clk="sly.help"
+                          target="_blank"
+                          >도움말</a
+                        >을 확인해주세요.</span
+                      >
+                    </div>
+                  </div>
+                  <div class="atcmp_footer">
+                    <span class="side_opt_area">
+                      <span class="opt_item"
+                        ><a
+                          href="https://help.naver.com/support/service/main.help?serviceNo=605&amp;categoryNo=1991"
+                          data-clk="sly.help"
+                          target="_blank"
+                          >도움말</a
+                        ></span
+                      >
+                    </span>
+                    <span class="rside_opt_area">
+                      <span class="opt_item">
+                        <!-- [AU] _keywordOnOff 클래스를 추가해주세요. -->
+                        <a href="#" class="close _keywordOnOff"
+                          >자동저장 끄기</a
+                        >
+                      </span>
+                    </span>
+                  </div>
+                </div>
+                <!-- 자동완성 -->
+                <!-- [AU] _atcmp_layer 클래스를 추가해주세요. -->
+                <div class="atcmp_fixer _atcmp_layer" style="display: none">
+                  <!-- [AU] _words 클래스를 추가해주세요. -->
+                  <div class="atcmp_container _words">
+                    <!-- 정답형 템플릿 : 로또당첨번호 -->
+                    <!-- [AU] _answer 클래스를 추가해주세요. -->
+                    <!-- [AU] data-template-type="answer_3" data-code="@code@" data-keyword="@1@" attribute를 추가해주세요. -->
+
+                    <!-- 정답형 템플릿 : 환율 -->
+                    <!-- [AU] _answer 클래스를 추가해주세요. -->
+                    <!-- [AU] data-template-type="answer_9" data-code="@code@" data-keyword="@1@" attribute를 추가해주세요. -->
+
+                    <!-- 정답형 템플릿 : 날씨(국내11, 해외12) -->
+                    <!-- [AU] _answer 클래스를 추가해주세요. -->
+                    <!-- [AU] data-template-type="answer_11" data-code="@code@" data-keyword="@1@" attribute를 추가해주세요. -->
+
+                    <!-- 정답형 템플릿 : 사이트 바로가기 -->
+                    <!-- [AU] _answer 클래스를 추가해주세요. -->
+                    <!-- [AU] data-template-type="answer_17" data-code="@code@" data-keyword="@1@" attribute를 추가해주세요. -->
+
+                    <!-- [AU] _kwd_list 클래스를 추가해주세요. -->
+                    <ul class="kwd_lst _kwd_list">
+                      <!-- [AU] 자동완성 검색어 템플릿 -->
+                      <!-- [AU] _item 클래스를 추가해주세요. -->
+                      <!-- [AU] data-rank="@rank@" data-template-type="suggestion" data-keyword="@in_txt@" attribute를 추가해주세요. -->
+
+                      <!-- [AU] 최근검색어 템플릿 -->
+                      <!-- [AU] _item 클래스를 추가해주세요. -->
+                      <!-- [AU] data-rank="@rank@" data-template-type="history" data-keyword="@in_txt@" attribute를 추가해주세요. -->
+                    </ul>
+                    <!-- [AU] 문맥검색 템플릿 -->
+                    <!-- [AU] _item 클래스를 추가해주세요. -->
+                    <!-- [AU] data-rank="@rank@" data-template-type="intend" data-keyword="@transQuery@" attribute를 추가해주세요. -->
+
+                    <!-- [D] 선거안내문구 -->
+                    <!-- [AU] _alert 클래스를 추가해주세요. -->
+                    <div class="atcmp_alert _alert">
+                      <div class="dsc_election">
+                        <p class="dsc">
+                          <i class="imsc ico_election"></i
+                          ><span class="_alert_passage"></span>
+                        </p>
+                        <span class="dsc_inner">
+                          <!-- [AU] _alert_passage2 클래스를 추가해주세요. -->
+                          <span class="_alert_passage2"></span>
+                          <!-- [AU] _alert_link 클래스를 추가해주세요. -->
+                          <a href="#" class="link _alert_link" target="_blank"
+                            >자세히보기</a
+                          >
+                        </span>
+                      </div>
+                    </div>
+                    <!-- [AU] _plus 클래스를 추가해주세요. -->
+                    <div class="atcmp_plus _plus">
+                      <div class="dsc_plus">
+                        <a
+                          href="https://help.naver.com/support/alias/search/word/word_16.naver"
+                          class="link_dsc"
+                          data-clk="sug.cxhelp"
+                          target="_blank"
+                          >관심사를 반영한 컨텍스트 자동완성<i
+                            class="imsc ico_help"
+                            >도움말</i
+                          ></a
+                        >
+                      </div>
+                      <div class="switch">
+                        <!-- [D] 선택시 aria-pressed="ture/false" -->
+                        <!-- [AU] _plus_btn 클래스를 추가해주세요. -->
+                        <a
+                          role="button"
+                          href="#"
+                          class="bt_switch active _plus_btn"
+                          aria-pressed="true"
+                          ><i class="imsc ico_option">컨텍스트 자동완성</i></a
+                        >
+                      </div>
+                      <!-- [AU] _plus_layer 클래스를 추가해주세요. -->
+                      <div class="layer_plus _plus_layer">
+                        <strong class="tit">컨텍스트 자동완성</strong>
+                        <!-- [AU] _plus_layer_isloggedin 클래스를 추가해주세요. -->
+                        <!-- [AU] style="display:none" 추가해주세요. -->
+                        <div
+                          class="_plus_layer_isloggedin"
+                          style="display: none"
+                        >
+                          <p class="dsc">
+                            ON/OFF 설정은<br />해당기기(브라우저)에 저장됩니다.
+                          </p>
+                          <div class="btn_area">
+                            <a
+                              href="https://help.naver.com/support/alias/search/word/word_16.naver"
+                              class="btn btn_view"
+                              data-clk="sug.cxlink"
+                              target="_blank"
+                              >자세히</a
+                            >
+                          </div>
+                        </div>
+                        <!-- [AU] _plus_layer_isnotloggedin 클래스를 추가해주세요. -->
+                        <!-- [AU] style="display:none" 추가해주세요. -->
+                        <div
+                          class="_plus_layer_isnotloggedin"
+                          style="display: none"
+                        >
+                          <p class="dsc">
+                            <em class="txt">동일한 시간대/연령/남녀별</em>
+                            사용자 그룹의<br />관심사에 맞춰 자동완성을
+                            제공합니다.
+                          </p>
+                          <div class="btn_area">
+                            <a
+                              href="https://nid.naver.com/nidlogin.login"
+                              class="btn btn_login"
+                              data-clk="sug.cxlogin"
+                              >로그인</a
+                            >
+                            <a
+                              href="https://help.naver.com/support/alias/search/word/word_16.naver"
+                              class="btn btn_view"
+                              data-clk="sug.cxlink"
+                              target="_blank"
+                              >자세히</a
+                            >
+                          </div>
+                        </div>
+                        <!-- [AU] _plus_layer_close 클래스를 추가해주세요. -->
+                        <a
+                          href="#"
+                          role="button"
+                          class="btn_close _plus_layer_close"
+                          ><i class="imsc ico_close"
+                            >컨텍스트 자동완성 레이어 닫기</i
+                          ></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="atcmp_footer">
+                    <span class="side_opt_area">
+                      <span class="opt_item"
+                        ><a
+                          href="https://help.naver.com/alias/search/word/word_17.naver"
+                          data-clk="sug.help"
+                          target="_blank"
+                          >도움말</a
+                        ></span
+                      >
+                      <span class="opt_item"
+                        ><a
+                          href="https://help.naver.com/support/contents/contents.help?serviceNo=605&amp;categoryNo=18215"
+                          class="report"
+                          data-clk="sug.report"
+                          target="_blank"
+                          >신고</a
+                        ></span
+                      >
+                    </span>
+                    <span class="rside_opt_area">
+                      <span class="opt_item">
+                        <!-- [AU] _suggestOnOff 클래스를 추가해주세요. -->
+                        <a href="#" class="close _suggestOnOff"
+                          >자동완성 끄기</a
+                        >
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="ico_arr"></span>
+        </a>
+      </div>
+    </div>
+
+    <script src="search.js"></script>
+  </body>
+</html>

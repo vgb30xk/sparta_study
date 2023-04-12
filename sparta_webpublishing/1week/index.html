@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>스파르타코딩클럽 | HTML 기초</title>
+
+    <style>
+      element.style {
+        ime-mode: active;
+      }
+      #header .search_area .input_text {
+        width: 444px;
+        height: 24px;
+        padding: 13px 15px;
+        margin: 1px;
+        background-color: #fff;
+        font-size: 18px;
+        line-height: 24px;
+        color: #000;
+        font-weight: 700;
+        outline: 0;
+      }
+      button,
+      input {
+        -webkit-border-radius: 0;
+        border-radius: 0;
+        border: 0;
+      }
+      body,
+      button,
+      input,
+      select,
+      table,
+      textarea {
+        font-size: 12px;
+        line-height: 16px;
+        color: #202020;
+        font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic",
+          "맑은 고딕", helvetica, "Apple SD Gothic Neo", sans-serif;
+      }
+      body,
+      button,
+      dd,
+      dl,
+      dt,
+      fieldset,
+      form,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      input,
+      legend,
+      li,
+      ol,
+      p,
+      select,
+      table,
+      td,
+      textarea,
+      th,
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+      injected stylesheet *,
+      ::after,
+      ::backdrop,
+      ::before,
+      ::cue,
+      ::marker,
+      ::placeholder {
+        user-select: text !important;
+      }
+      user agent stylesheet input[type="text" i] {
+        padding: 1px 2px;
+      }
+      user agent stylesheet input {
+        writing-mode: horizontal-tb !important;
+        font-style: ;
+        font-variant-ligatures: ;
+        font-variant-caps: ;
+        font-variant-numeric: ;
+        font-variant-east-asian: ;
+        font-weight: ;
+        font-stretch: ;
+        font-size: ;
+        font-family: ;
+        text-rendering: auto;
+        color: fieldtext;
+        letter-spacing: normal;
+        word-spacing: normal;
+        line-height: normal;
+        text-transform: none;
+        text-indent: 0px;
+        text-shadow: none;
+        display: inline-block;
+        text-align: start;
+        appearance: auto;
+        -webkit-rtl-ordering: logical;
+        cursor: text;
+        background-color: field;
+        margin: 0em;
+        padding: 1px 2px;
+        border-width: 2px;
+        border-style: inset;
+        border-color: -internal-light-dark(
+          rgb(118, 118, 118),
+          rgb(133, 133, 133)
+        );
+        border-image: initial;
+      }
+      injected stylesheet *,
+      ::after,
+      ::backdrop,
+      ::before,
+      ::cue,
+      ::marker,
+      ::placeholder {
+        user-select: text !important;
+      }
+      injected stylesheet *,
+      ::after,
+      ::backdrop,
+      ::before,
+      ::cue,
+      ::marker,
+      ::placeholder {
+        user-select: text !important;
+      }
+      injected stylesheet *,
+      ::after,
+      ::backdrop,
+      ::before,
+      ::cue,
+      ::marker,
+      ::placeholder {
+        user-select: text !important;
+      }
+      injected stylesheet *,
+      ::after,
+      ::backdrop,
+      ::before,
+      ::cue,
+      ::marker,
+      ::placeholder {
+        user-select: text !important;
+      }
+      injected stylesheet *,
+      ::after,
+      ::backdrop,
+      ::before,
+      ::cue,
+      ::marker,
+      ::placeholder {
+        user-select: text !important;
+      }
+      injected stylesheet *,
+      ::after,
+      ::backdrop,
+      ::before,
+      ::cue,
+      ::marker,
+      ::placeholder {
+        user-select: text !important;
+      }
+      injected stylesheet *,
+      ::after,
+      ::backdrop,
+      ::before,
+      ::cue,
+      ::marker,
+      ::placeholder {
+        user-select: text !important;
+      }
+      injected stylesheet *,
+      ::after,
+      ::backdrop,
+      ::before,
+      ::cue,
+      ::marker,
+      ::placeholder {
+        user-select: text !important;
+      }
+      injected stylesheet *,
+      ::after,
+      ::backdrop,
+      ::before,
+      ::cue,
+      ::marker,
+      ::placeholder {
+        user-select: text !important;
+      }
+      :root {
+        color-scheme: light;
+      }
+      html {
+        font-size: 10px;
+        line-height: 10px;
+      }
+      injected stylesheet *,
+      ::after,
+      ::backdrop,
+      ::before,
+      ::cue,
+      ::marker,
+      ::placeholder {
+        user-select: text !important;
+      }
+      injected stylesheet *,
+      ::after,
+      ::backdrop,
+      ::before,
+      ::cue,
+      ::marker,
+      ::placeholder {
+        user-select: text !important;
+      }
+      injected stylesheet *,
+      ::after,
+      ::backdrop,
+      ::before,
+      ::cue,
+      ::marker,
+      ::placeholder {
+        user-select: text !important;
+      }
+      injected stylesheet *,
+      ::after,
+      ::backdrop,
+      ::before,
+      ::cue,
+      ::marker,
+      ::placeholder {
+        user-select: text !important;
+      }
+      injected stylesheet *,
+      ::after,
+      ::backdrop,
+      ::before,
+      ::cue,
+      ::marker,
+      ::placeholder {
+        user-select: text !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- 구역을 나누는 태그들 -->
+    <div>나는 구역을 나누죠</div>
+    <p>나는 문단이에요</p>
+    <ul>
+      <li>bullet point!1</li>
+      <li>bullet point!2</li>
+    </ul>
+
+    <div class="box">
+      <div class="first">첫 번째 구역</div>
+      <div class="second">두 번째 구역</div>
+    </div>
+    <!-- 구역 내 콘텐츠 태그들 -->
+    <h1>
+      h1은 제목을 나타내는 태그입니다. 페이지마다 하나씩 꼭 써주는 게 좋아요.
+      그래야 구글 검색이 잘 되거든요.
+    </h1>
+    <h2>h2는 소제목입니다.</h2>
+    <h3>h3~h6도 각자의 역할이 있죠. 비중은 작지만..</h3>
+    <hr />
+    a 태그입니다: <a href="http://google.com/" target="_blank">하이퍼링크</a>
+    <hr />
+    img 태그입니다:
+    <img
+      src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+    />
+    <hr />
+    input 태그입니다: <input type="text" />
+    <hr />
+    button 태그입니다: <button>버튼입니다</button>
+    <hr />
+    textarea 태그입니다: <textarea></textarea>
+  </body>
+</html>

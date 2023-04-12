@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>증시/환율</title>
+
+  <!-- swiper.js demos -->
+  <!-- https://swiperjs.com/demos -->
+
+  <!-- swiper api -->
+  <!-- https://swiperjs.com/swiper-api -->
+
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+  <!-- style -->
+  <link rel="stylesheet" href="timesquare.css" />
+
+  <!-- jquery CDN -->
+  <!-- https://code.jquery.com/ -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+  <div class="column_fix_wrap">
+    <div id="timesquare" class="sc_timesquare">
+      <h2 class="blind">타임스퀘어</h2>
+      <div class="card_wrap">
+        <div class="card_nav">
+          <a href="#" role="button" class="btn_nav btn_prev"><span class="blind">이전</span></a>
+          <a href="#" role="button" class="btn_nav btn_next"><span class="blind">다음</span></a>
+        </div>
+        <div id="NM_TS_ROLLING_WRAP">
+          <div class="swiper-container mySwiper">
+            <div class="swiper-wrapper">
+              <!-- 이슈 -->
+              <a href="https://search.naver.com/search.naver?sm=top_hty&amp;fbm=0&amp;ie=utf8&amp;query=%EC%BD%94%EB%A1%9C%EB%82%9819"
+                class="card_news swiper-slide">
+                <i class="news_badge">이슈</i><span class="news">코로나바이러스감염증-19 현황</span>
+              </a>
+              <!-- Live -->
+              <a href="https://news.naver.com/main/home.nhn" class="card_news swiper-slide">
+                <i class="news_badge type_live">LIVE</i><span class="news">저녁방송 메인뉴스 보기</span>
+              </a>
+              <!-- 증시 -->
+              <!-- 코스피 -->
+              <a href="https://finance.naver.com/sise/sise_index.nhn?code=KOSPI" class="card_stock swiper-slide">
+                <strong class="stock_title">증시</strong>
+                <div class="stock_box">
+                  <em class="name">코스피</em>
+                  <strong class="current">3,212.92</strong>
+                  <span class="rate rate_up">10.60 +0.33%</span>
+                </div>
+              </a>
+              <!-- 코스닥 -->
+              <a href="https://finance.naver.com/sise/sise_index.nhn?code=KOSDAQ" class="card_stock swiper-slide">
+                <strong class="stock_title">증시</strong>
+                <div class="stock_box">
+                  <em class="name">코스닥</em>
+                  <strong class="current">1,032.83</strong>
+                  <span class="rate rate_up">1.69 +0.16%</span>
+                </div>
+              </a>
+              <!-- 환율 -->
+              <a href="https://finance.naver.com/marketindex/exchangeDetail.nhn?marketindexCd=FX_USDKRW"
+                class="card_stock type_exchange swiper-slide">
+                <strong class="stock_title">환율</strong>
+                <div class="stock_box">
+                  <em class="name">USD</em>
+                  <strong class="current">1,149.50</strong>
+                  <span class="rate rate_up">3.00 +0.26%</span>
+                </div>
+              </a>
+              <!-- 신문 -->
+              <a href="https://news.naver.com/main/home.nhn" class="card_news swiper-slide">
+                <i class="news_badge type_flash">신문1면</i><span class="news">언론사 헤드라인 보기</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // swiper 객체 생성
+    // auto play 참고 https://velog.io/@function_dh/JavaScript-Swiper-%EC%82%AC%EC%9A%A9%EB%B2%95-%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C-%EA%B5%AC%ED%98%84
+    var swiper = new Swiper(".mySwiper", {
+      loop: true,
+      autoplay: {
+          delay: 5000,
+          disableOnInteraction: false  // // false로 설정하면 스와이프 후 자동 재생이 비활성화 되지 않음
+        },
+      // buttons 컨트롤은 options 에 navigation 사용 혹은
+      // swiper api 에 slidePrev, slideNext 함수 사용 가능
+      navigation: {
+        nextEl: "#timesquare .card_nav .btn_next",
+        prevEl: "#timesquare .card_nav .btn_prev",
+      },
+    });
+
+    // buttons 컨트롤 
+    // $buttons = $('#timesquare').find('.card_nav .btn_nav');
+
+    // $buttons.on('click', function () {
+    //   isPrev = $(this).hasClass('btn_prev'); // prev 버튼이면 true, next 버튼이면 flase
+    //   if (isPrev) {
+    //     // prev 버튼을 눌렀을때
+    //     swiper.slidePrev();
+    //   } else {
+    //     // next 버튼을 눌렀을때
+    //     swiper.slideNext();
+    //   }
+    // });
+  </script>
+</body>
+
+</html>

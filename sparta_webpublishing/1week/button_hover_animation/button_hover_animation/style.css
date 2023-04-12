@@ -1,0 +1,34 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  padding: 5px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #e8344e;
+  background-color: white;
+  border: solid 2px #e8344e;
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* button use-css */
+.button.use-css:hover {
+  background-color: #e8344e;
+  color: white;
+}
+
+/* button use-class */
+.button.use-class.on {
+  background-color: #e8344e;
+  color: white;
+}

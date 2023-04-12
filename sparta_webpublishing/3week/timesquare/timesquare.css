@@ -1,0 +1,275 @@
+/* rest */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+i {
+  font-style: normal;
+}
+
+address,
+em {
+  font-style: normal;
+}
+
+/* html, body setting */
+html,
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* for accessibility */
+.blind {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+
+/* image setting */
+.sc_timesquare .card_stock .rate_up:before,
+.sc_timesquare .card_stock.type_exchange .name:before,
+.sc_timesquare .card_nav .btn_prev:before,
+.sc_timesquare .card_nav .btn_next:before {
+  background-image: url(https://s.pstatic.net/static/www/img/uit/2021/sp_main_57f073.png);
+  -webkit-background-size: 444px 439px;
+  background-size: 444px 439px;
+  background-repeat: no-repeat;
+}
+
+/* 최상단 div */
+.column_fix_wrap {
+  position: relative;
+  width: 350px;
+  background-color: #fff;
+}
+
+/* sc_timesquare */
+.sc_timesquare {
+  position: relative;
+  height: 47px;
+  margin: 12px 0;
+  border: 1px solid #dae1e6;
+  letter-spacing: -0.25px;
+}
+
+.sc_timesquare .card_wrap {
+  /* overflow: hidden; */
+  height: 47px;
+  padding-right: 67px;
+}
+
+/* 좌우 네비게이션 */
+/* card-nav */
+.sc_timesquare .card_nav {
+  position: absolute;
+  top: 11px;
+  right: 10px;
+  overflow: hidden;
+}
+
+.sc_timesquare .card_nav .btn_nav {
+  float: left;
+  background-color: #fff;
+  border: 1px solid #e4e8eb;
+}
+
+.sc_timesquare .card_nav .btn_nav + .btn_nav {
+  margin-left: -1px;
+}
+
+.sc_timesquare .card_nav .btn_prev:before {
+  display: inline-block;
+  width: 6px;
+  height: 9px;
+  background-position: -287px -337px;
+  background-repeat: no-repeat;
+  vertical-align: top;
+  content: "";
+  margin: 7px 8px 6px;
+}
+
+.sc_timesquare .card_nav .btn_next:before {
+  display: inline-block;
+  width: 6px;
+  height: 9px;
+  background-position: -438px -385px;
+  background-repeat: no-repeat;
+  vertical-align: top;
+  content: "";
+  margin: 7px 8px 6px;
+}
+
+/* 이슈 */
+/* card_news */
+.sc_timesquare .card_news {
+  overflow: hidden;
+  display: block;
+  padding: 14px 0 13px 16px;
+  box-sizing: border-box;
+}
+
+.sc_timesquare .card_news .news_badge {
+  float: left;
+  height: 18px;
+  padding: 0 7px;
+  margin-right: 8px;
+  border: 1px solid #202020;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  font-size: 11px;
+  line-height: 18px;
+  color: #202020;
+  font-weight: 700;
+  vertical-align: top;
+}
+
+.sc_timesquare .card_news .news_badge.type_live {
+  border-color: #ff4740;
+  color: #ff4740;
+}
+
+.sc_timesquare .card_news .news_badge.type_flash {
+  border-color: #3291f8;
+  color: #3291f8;
+}
+
+.sc_timesquare .card_news .news {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  font-size: 13px;
+  line-height: 20px;
+  color: #404040;
+}
+
+/* 환율 */
+/* card_stock */
+.sc_timesquare .card_stock {
+  overflow: hidden;
+  display: block;
+  padding: 15px 0 14px 16px;
+  box-sizing: border-box;
+}
+
+.sc_timesquare .card_stock .stock_title {
+  float: left;
+  /* margin-top: 1px; */
+  font-size: 13px;
+}
+
+.sc_timesquare .card_stock .stock_box {
+  overflow: hidden;
+  position: relative;
+  height: 20px;
+  font-size: 0;
+  line-height: 0;
+}
+
+.sc_timesquare .card_stock .stock_box:before {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 12px;
+  margin: 3px 7px 2px 6px;
+  background-color: #e4e8eb;
+  vertical-align: top;
+}
+
+.sc_timesquare .card_stock.type_exchange .name:before {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-position: -420px -302px;
+  background-repeat: no-repeat;
+  vertical-align: top;
+  content: "";
+  margin-right: 7px;
+}
+
+.sc_timesquare .card_stock .current,
+.sc_timesquare .card_stock .name,
+.sc_timesquare .card_stock .rate {
+  display: inline-block;
+  white-space: nowrap;
+  vertical-align: top;
+}
+
+.sc_timesquare .card_stock .name {
+  font-size: 12px;
+  line-height: 18px;
+  color: #505050;
+}
+
+.sc_timesquare .card_stock .current {
+  margin-left: 6px;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.sc_timesquare .card_stock .rate {
+  font-size: 12px;
+  line-height: 17px;
+  margin-left: 10px;
+}
+
+.sc_timesquare .card_stock .rate:before {
+  content: "";
+  margin-right: 3px;
+}
+
+.sc_timesquare .card_stock .rate_up {
+  color: #f05a5a;
+}
+
+.sc_timesquare .card_stock .rate_up:before {
+  display: inline-block;
+  width: 9px;
+  height: 6px;
+  background-position: -246px -204px;
+  background-repeat: no-repeat;
+  vertical-align: top;
+  vertical-align: 2px;
+}
+
+.sc_timesquare .card_stock .rate_down {
+  color: #2586ee;
+}
+
+.sc_timesquare .card_stock .rate_down:before {
+  display: inline-block;
+  width: 9px;
+  height: 6px;
+  background-position: -257px -204px;
+  background-repeat: no-repeat;
+  vertical-align: top;
+  vertical-align: 1px;
+}
+
+.sc_timesquare .card_stock .rate_stable {
+  color: grey;
+}
+
+.sc_timesquare .card_stock .rate_stable:before {
+  display: inline-block;
+  width: 8px;
+  height: 2px;
+  background-color: grey;
+  vertical-align: 3px;
+}
+
+.mySwiper {
+  overflow: hidden;
+}
